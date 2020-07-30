@@ -10,9 +10,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import App from "./App";
 import rootReducer from "./reducers";
 
-// Assets
-import "./index.css";
-
 // PWA
 import * as serviceWorker from "./serviceWorker";
 

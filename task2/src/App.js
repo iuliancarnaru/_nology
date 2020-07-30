@@ -1,13 +1,15 @@
 import React from "react";
-import "./App.css";
+import styled from "styled-components";
 import BooksPage from "./pages/BooksPage";
 
 const App = () => {
   return (
-    <div>
+    <AppWrapper>
       <BooksPage />
-    </div>
+    </AppWrapper>
   );
 };
+
+const AppWrapper = styled.div``;
 
 export default App;

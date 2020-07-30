@@ -16,13 +16,15 @@ export const getBooksFailure = () => ({
 });
 
 // create async thunk function
-export function fetchBooks() {
+export function fetchBooks({ book = "", author = "" }) {
   return async (dispatch) => {
-    dispatch(getBooks());
+    // can be passed in from outside in the function call
+    const ITEMS_PER_PAGE = 40;
 
+    dispatch(getBooks());
     try {
       const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q="javascript"`
+        `https://www.googleapis.com/books/v1/volumes?q=${book}+inauthor:${author}&key=AIzaSyBAkrpT-aAQrsE8k0yF20lO-ZtbuZRjmig&maxResults=${ITEMS_PER_PAGE}&startIndex=0`
       );
       const data = await response.json();
       dispatch(getBooksSuccess(data.items));
