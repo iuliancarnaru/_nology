@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
@@ -8,10 +8,6 @@ import Book from "../components/Book";
 import Navbar from "../components/Navbar";
 
 const BooksPage = ({ dispatch, books, loading, hasErrors }) => {
-  useEffect(() => {
-    dispatch(fetchBooks({}));
-  }, [dispatch]);
-
   const renderBooks = () => {
     if (loading) return <Loader />;
     if (hasErrors) return <p>Unable to display books.</p>;

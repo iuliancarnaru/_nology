@@ -17,7 +17,7 @@ const Book = (book) => {
   } = book.book;
 
   return (
-    <BookCardWrapper>
+    <BookCardWrapper data-testid="book-wrapper">
       <BookCardTitle>{title.toUpperCase()}</BookCardTitle>
       <BookCardImage src={thumbnail} alt={title} />
       <BookCardDetails>
@@ -42,7 +42,7 @@ const Book = (book) => {
 };
 
 Book.propTypes = {
-  book: PropTypes.object.isRequired,
+  book: PropTypes.object,
 };
 
 const BookCardWrapper = styled.div`
